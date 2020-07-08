@@ -1,10 +1,14 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {FormControl} from '@angular/forms';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'datepicker-extension';
+    label = 'choose a date';
+    referenceDate = new FormControl(new Date());
+    referenceDateMaxDate = new Date();
+    tooltip = 'just a test datepicker';
 }

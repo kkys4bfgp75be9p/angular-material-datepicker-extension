@@ -1,0 +1,36 @@
+<mat-form-field [formGroup]="parts" matTooltip="{{tooltip}}" matTooltipPosition="right">
+    <mat-label *ngIf="label">{{label}}</mat-label>
+    <!-- #docregion toggle -->
+    <input #ref
+           matInput
+           formControlName="date"
+           [matDatepicker]="picker"
+           [max]="referenceMaxDate"
+           (dateChange)="onDateChange(ref.value)">
+    <div matPrefix style="display: flex">
+        <button mat-icon-button
+                aria-label="button for today"
+                (click)="_today()"
+                matTooltip="Info about the action"
+                [matTooltipPosition]="'above'"
+                matTooltipHideDelay="1000">
+            <mat-icon>keyboard_arrow_up</mat-icon>
+        </button>
+        <button mat-icon-button
+                aria-label="button for yesterday"
+                (click)="_yesterday()">
+            <mat-icon>keyboard_arrow_left</mat-icon>
+        </button>
+    </div>
+    <div matSuffix style="display: flex">
+        <button mat-icon-button
+                aria-label="button for tomorrow"
+                (click)="_tomorrow()"
+                [disabled]="tomorrowButtonDisabled">
+            <mat-icon>keyboard_arrow_right</mat-icon>
+        </button>
+        <mat-datepicker-toggle [for]="picker"></mat-datepicker-toggle>
+    </div>
+    <mat-datepicker #picker></mat-datepicker>
+    <!-- #enddocregion toggle -->
+</mat-form-field>
