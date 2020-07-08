@@ -1,6 +1,8 @@
 # DatepickerExtension
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.5.
+Angular material design datepicker extension. Add today, yesterday and tomorrow button for the datepicker for more convenient.
+
+![Datepicker extension](datepicker-extension.png)
 
 ## Development server
 
